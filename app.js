@@ -1,52 +1,37 @@
-// Задача 1: Проверка на четность и нечетность
-function checkEvenOdd(num) {
-    return num % 2 === 0 ? "Четное" : "Нечетное";
+// Задание 1: Вывод элементов массива
+const arr = ['apple', 'banana', 'cherry', 'date'];
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
 }
 
-console.log(checkEvenOdd(4)); // "Четное"
-console.log(checkEvenOdd(7)); // "Нечетное"
+// Задание 2: Генерация случайного пароля
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+let password = '';
 
-// Задача 2: Факториал числа
-function factorial(n) {
-    if (n === 0 || n === 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
-    }
-    return result;
+for (let i = 0; i < 8; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    password += chars[randomIndex];
 }
 
-console.log(factorial(5)); // 120
-console.log(factorial(0)); // 1
+console.log("Generated password:", password);
 
-// Задача 3: Поиск максимального числа в массиве
-function findMax(arr) {
-    return Math.max(...arr);
-}
+// Задание 3: Деструктуризация объекта
+const person = { name: "Aibek", age: 25, country: "Kyrgyzstan" };
+const { name, age } = person;
 
-console.log(findMax([1, 5, 3, 9, 2])); // 9
-console.log(findMax([-5, -1, -8])); // -1
+console.log("Name:", name, "Age:", age);
 
-// Задача 4: Подсчет числа гласных в строке
-function countVowels(str) {
-    const vowels = "aeiouAEIOU";
-    let count = 0;
-    for (let char of str) {
-        if (vowels.includes(char)) {
-            count++;
-        }
-    }
-    return count;
-}
+// Задание 4: Объединение объектов
+const car1 = { brand: "Toyota", year: 2015 };
+const car2 = { brand: "Honda", year: 2020 };
 
-console.log(countVowels("hello")); // 2
-console.log(countVowels("world")); // 1
+const newCar = { ...car1, ...car2 };
 
-// Задача 6: Сумма всех чисел в массиве
-function sumArray(arr) {
-    return arr.reduce((sum, num) => sum + num, 0);
-}
+console.log("Merged Car:", newCar);
 
-console.log(sumArray([1, 2, 3, 4, 5])); // 15
-console.log(sumArray([-1, -2, 3])); // 0
+// Задание 5: Фильтрация чисел
+const values = [10, "hello", 25, "world", 30, false, 50, "JS"];
+const numbersOnly = values.filter(item => typeof item === "number");
 
+console.log("Filtered Numbers:", numbersOnly);
